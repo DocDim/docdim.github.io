@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tchifou M. Dieffi — Data Scientist &amp; ML Engineer</title>
+<meta name="description" content="Portfolio of Tchifou M. Dieffi — explainable AI, machine learning pipelines, and data engineering.">
+<style>
+  :root {
+    --bg: #0b0d12;
+    --bg-elevated: #12151c;
+    --border: #232733;
+    --text: #e8eaf0;
+    --text-dim: #9aa2b4;
+    --accent: #6fb5ff;
+    --accent-dim: #2a4a6b;
+    --tag-bg: #1a2230;
+    --max-width: 880px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fbfbfd;
+      --bg-elevated: #ffffff;
+      --border: #e4e6ec;
+      --text: #1a1d24;
+      --text-dim: #5b6272;
+      --accent: #1f6fd6;
+      --accent-dim: #d8e8fb;
+      --tag-bg: #eef2f8;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header.hero {
+    margin-bottom: 56px;
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+  .lede {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin: 0 0 28px;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    background: var(--bg-elevated);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .links a:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .links a.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #05070a;
+  }
+  section {
+    margin-bottom: 56px;
+  }
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .about p {
+    color: var(--text-dim);
+    max-width: 700px;
+    margin: 0 0 14px;
+  }
+  .about p:last-child { margin-bottom: 0; }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .card-title {
+    font-weight: 650;
+    font-size: 1.02rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-title .arrow {
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .card:hover .card-title .arrow { opacity: 1; }
+  .card-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    flex-grow: 1;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .tag {
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: var(--tag-bg);
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .skill-group h3 {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin: 0 0 10px;
+    font-weight: 650;
+  }
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .skill-list span {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  footer {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 32px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Data Science · Machine Learning</div>
+    <h1>Tchifou M. Dieffi</h1>
+    <p class="lede">
+      Graduate researcher and data scientist finishing an M.S. in Data Science at Hood College,
+      working on explainable AI, machine learning pipelines, and healthcare analytics.
+      Currently expanding into systems-level ML engineering — C++, GPU programming, and model
+      deployment on edge hardware.
+    </p>
+    <div class="links">
+      <a class="primary" href="https://github.com/DocDim" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/dieffi-m-tchifou-3608649/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://pypi.org/project/i2g/" target="_blank" rel="noopener">PyPI: i2g</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      My research centers on understanding what ML models actually do rather than taking their
+      outputs at face value — from SHAP and KernelSHAP interpretability work to studying what
+      PCA-based debiasing techniques really remove from word embeddings.
+    </p>
+    <p>
+      Professionally, I've worked as a data analyst on enterprise data warehousing, ELT pipelines,
+      and healthcare claims data, and I build end-to-end ML applications spanning training,
+      preprocessing, and deployment.
+    </p>
+  </section>
+
+  <section class="projects-section">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+
+      <a class="card" href="https://github.com/DocDim/digitix" target="_blank" rel="noopener">
+        <div class="card-title">digitix <span class="arrow">→</span></div>
+        <div class="card-desc">Full-stack CNN application for handwritten digit recognition, with a live image-processing pipeline and a Streamlit interface.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">CNN</span><span class="tag">Streamlit</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/DIM-Corp/i2g" target="_blank" rel="noopener">
+        <div class="card-title">i2g <span class="arrow">→</span></div>
+        <div class="card-desc">Open-source Python library, published on PyPI, for converting grayscale images into graph structures for GNN modeling.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">PyPI</span><span class="tag">GNN</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/DocDim/shap_stability_framework" target="_blank" rel="noopener">
+        <div class="card-title">shap_stability_framework <span class="arrow">→</span></div>
+        <div class="card-desc">Benchmarking framework for diagnosing and resolving algorithmic instability in KernelSHAP explanations.</div>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">XAI</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/DocDim/SyndromeX" target="_blank" rel="noopener">
+        <div class="card-title">SyndromeX <span class="arrow">→</span></div>
+        <div class="card-desc">Clinical decision support web application for real-time syndrome identification in epidemiological surveillance.</div>
+        <div class="card-tags"><span class="tag">Healthcare</span><span class="tag">Web App</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/DocDim/aws-lake-house" target="_blank" rel="noopener">
+        <div class="card-title">aws-lake-house <span class="arrow">→</span></div>
+        <div class="card-desc">Cloud data lakehouse pipeline curating ML training data using AWS Glue, Athena, and Spark.</div>
+        <div class="card-tags"><span class="tag">AWS</span><span class="tag">Spark</span><span class="tag">ETL</span></div>
+      </a>
+
+      <a class="card" href="https://github.com/DocDim/tellmemore" target="_blank" rel="noopener">
+        <div class="card-title">tellmemore <span class="arrow">→</span></div>
+        <div class="card-desc">Side-by-side comparison interface for GPT-4, Gemini, and LLaMA model responses in real time.</div>
+        <div class="card-tags"><span class="tag">TypeScript</span><span class="tag">LLMs</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages &amp; ML</h3>
+        <div class="skill-list">
+          <span>Python</span><span>SQL</span><span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>SHAP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data Engineering</h3>
+        <div class="skill-list">
+          <span>ETL/ELT</span><span>PostgreSQL</span><span>Oracle</span><span>MySQL</span><span>MongoDB</span><span>SQLAlchemy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Cloud</h3>
+        <div class="skill-list">
+          <span>AWS S3</span><span>Glue</span><span>Athena</span><span>Redshift</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Visualization</h3>
+        <div class="skill-list">
+          <span>Power BI</span><span>Tableau</span><span>Streamlit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Tchifou M. Dieffi · <a href="https://github.com/DocDim">GitHub</a> · <a href="https://www.linkedin.com/in/dieffi-m-tchifou-3608649/">LinkedIn</a>
+  </footer>
+
+</div>
+</body>
+</html>
